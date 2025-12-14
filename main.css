@@ -1,0 +1,241 @@
+/* Basic page setup */
+html {
+    background-color: #ffffff;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    width: 98%;
+    max-width: 960px;
+    margin: 0 auto;
+    border: 3px solid #931420;
+    background-color: #fffded;
+}
+
+/* Typography */
+h1, h2, h3 {
+    color: #931420;
+    margin-top: 0;
+}
+
+.large {
+    font-size: 180%;
+}
+
+/* Header */
+header {
+    padding: 1.5em 2%;
+    border-bottom: 3px solid #931420;
+    background: linear-gradient(#f6f3e7, #ffffff);
+    overflow: hidden;
+}
+
+header img {
+    float: left;
+    margin-right: 2%;
+    max-width: 20%;
+    height: auto;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header h3 {
+    margin: 0.3em 0 0;
+    font-style: italic;
+}
+
+/* Navigation (two-tier menu) */
+.navbar {
+    clear: both;
+    background-color: #800000;
+}
+
+.navbar .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* main level items */
+.navbar .menu > li {
+    float: left;
+    width: 20%;
+    position: relative;
+}
+
+.navbar a {
+    display: block;
+    padding: 0.75em 0;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.navbar a:hover,
+.navbar a.current {
+    background-color: #b32b2b;
+}
+
+/* dropdown submenu */
+.navbar .submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;          /* step: submenu list is full width */
+    background-color: #800000;
+    display: none;
+    z-index: 1000;
+}
+
+.navbar .submenu li {
+    float: none;
+    width: 100%;
+}
+
+.navbar li:hover > .submenu {
+    display: block;
+}
+
+/* Layout: main + sidebar */
+main {
+    overflow: hidden;
+    padding: 1.5em 2%;
+}
+
+section {
+    float: right;
+    width: 68%;
+    padding: 0 2% 1.5em 2%;
+    background-color: #ffffff;
+}
+
+aside {
+    float: left;
+    width: 26%;
+    padding: 0 2% 1.5em 2%;
+    background-color: #f6f3e7;
+}
+
+/* Sidebar content */
+aside img {
+    display: block;
+    margin: 0.5em auto 1em;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Article / featured speaker */
+.featured img {
+    float: right;
+    margin: 0.5em 0 0.5em 2%;
+    max-width: 40%;      /* scalable image */
+    min-width: 150px;
+    height: auto;
+}
+
+.featured p {
+    line-height: 1.4;
+}
+
+/* Lists */
+section ul {
+    margin-left: 1.5em;
+}
+
+/* Footer */
+footer {
+    clear: both;
+    padding: 0.75em 2%;
+    border-top: 3px solid #931420;
+    text-align: right;
+    font-size: 0.9em;
+    background-color: #f6f3e7;
+}
+
+/* ------------ MEDIA QUERIES ------------ */
+
+/* Tablet portrait and down */
+@media (max-width: 900px) {
+
+    header img {
+        max-width: 25%;
+    }
+
+    .navbar .menu > li {
+        width: 25%;
+    }
+
+    section {
+        width: 62%;
+    }
+
+    aside {
+        width: 32%;
+    }
+}
+
+/* Small tablets / phones landscape */
+@media (max-width: 700px) {
+
+    header {
+        text-align: center;
+    }
+
+    header img {
+        float: none;
+        margin: 0 auto 1em;
+        max-width: 35%;
+    }
+
+    .navbar .menu > li {
+        width: 50%;
+    }
+
+    section,
+    aside {
+        float: none;
+        width: 100%;
+        padding: 1em 2%;
+    }
+
+    .featured img {
+        float: none;
+        display: block;
+        margin: 1em auto;
+        max-width: 60%;
+    }
+}
+
+/* Phone portrait */
+@media (max-width: 480px) {
+
+    body {
+        border-width: 0;
+        width: 100%;
+    }
+
+    .navbar .menu > li {
+        width: 100%;
+    }
+
+    .navbar .submenu {
+        position: static;
+    }
+
+    main {
+        padding: 1em 4%;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
